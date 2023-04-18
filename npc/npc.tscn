@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://dbcf0a8o4dcjo"]
+
+[ext_resource type="Script" path="res://npc/npc.gd" id="1_c0egq"]
+[ext_resource type="Texture2D" uid="uid://bcwhnxf78ogip" path="res://icon.svg" id="2_m2frf"]
+[ext_resource type="PackedScene" uid="uid://oskewj4s2i4k" path="res://dialogue/area/dialogue-area.tscn" id="3_g3ns7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a5frt"]
+size = Vector2(128, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xow8g"]
+size = Vector2(160, 160)
+
+[node name="NPC" type="CharacterBody2D"]
+script = ExtResource("1_c0egq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_a5frt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_m2frf")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "NPC"
+
+[node name="DialogueArea" parent="." instance=ExtResource("3_g3ns7")]
+
+[node name="CollisionShape2D" parent="DialogueArea" index="0"]
+shape = SubResource("RectangleShape2D_xow8g")
+
+[node name="DialogueIndicatorAnchor" parent="DialogueArea" index="1"]
+position = Vector2(32, -24)
+
+[node name="DialogueIndicatorSprite" parent="DialogueArea/DialogueIndicatorAnchor" index="0"]
+position = Vector2(32, -40)
+scale = Vector2(5, 5)
+
+[editable path="DialogueArea"]

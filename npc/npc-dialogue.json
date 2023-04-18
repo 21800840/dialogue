@@ -1,0 +1,12 @@
+{
+	"First Meet": {
+		"1" : {"name":"npc", "text":"Hello! This is the first time we've met.", "options":"0"}
+	},
+	"No Quests": {
+		"1" : {"name":"npc", "text":"I don't have any quests for you right now.", "options":"0"},
+		"2" : {"name":"Player", "text":"Oh, ok.", "options":"0"}
+	},
+	"Options": {
+		"1" : {"name":"npc", "text":"I have a few options for you...", "options":"1"}
+	}
+}

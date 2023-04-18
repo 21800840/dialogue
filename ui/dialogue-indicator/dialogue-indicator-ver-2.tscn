@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bw2d53gurxgv0"]
+
+[ext_resource type="SpriteFrames" uid="uid://cb5au6o77k8lf" path="res://ui/dialogue-indicator/dialogue-indicator-ver-2.tres" id="1_ws1md"]
+
+[node name="DialogueIndicatorVer2" type="AnimatedSprite2D"]
+sprite_frames = ExtResource("1_ws1md")
+autoplay = "default"
+frame_progress = 0.674481

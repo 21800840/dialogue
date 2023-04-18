@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bb1kcss2flxpx"]
+
+[ext_resource type="Script" path="res://dictionary.gd" id="1_praxd"]
+[ext_resource type="PackedScene" uid="uid://dmintq46x10md" path="res://dialogue/dialogue-box/dialogue-box.tscn" id="2_yh5il"]
+
+[node name="Dictionary" type="Node"]
+script = ExtResource("1_praxd")
+json_file = "res://npc/npc-dialogue.json"
+
+[node name="DialogueBox" parent="." instance=ExtResource("2_yh5il")]

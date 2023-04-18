@@ -1,0 +1,69 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmintq46x10md"]
+
+[ext_resource type="Texture2D" uid="uid://bcwhnxf78ogip" path="res://icon.svg" id="1_t5xgt"]
+[ext_resource type="Script" path="res://dialogue/dialogue-box/dialogue-box.gd" id="1_vt46e"]
+
+[node name="DialogueBox" type="CanvasLayer"]
+script = ExtResource("1_vt46e")
+
+[node name="JustDialogue" type="TextureRect" parent="."]
+visible = false
+offset_left = 192.0
+offset_top = 384.0
+offset_right = 960.0
+offset_bottom = 584.0
+texture = ExtResource("1_t5xgt")
+
+[node name="NameLabel" type="RichTextLabel" parent="JustDialogue"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 16.0
+offset_right = 744.0
+offset_bottom = 64.0
+text = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+
+[node name="TextLabel" type="RichTextLabel" parent="JustDialogue"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 80.0
+offset_right = 744.0
+offset_bottom = 184.0
+text = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+
+[node name="DialogueWith2Options" type="TextureRect" parent="."]
+visible = false
+offset_left = 192.0
+offset_top = 384.0
+offset_right = 768.0
+offset_bottom = 584.0
+texture = ExtResource("1_t5xgt")
+
+[node name="NameLabel" type="RichTextLabel" parent="DialogueWith2Options"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 16.0
+offset_right = 552.0
+offset_bottom = 64.0
+text = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+
+[node name="TextLabel" type="RichTextLabel" parent="DialogueWith2Options"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 80.0
+offset_right = 552.0
+offset_bottom = 184.0
+text = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+
+[node name="Option1" type="Button" parent="DialogueWith2Options"]
+layout_mode = 0
+offset_left = 592.0
+offset_top = 16.0
+offset_right = 752.0
+offset_bottom = 88.0
+
+[node name="Option2" type="Button" parent="DialogueWith2Options"]
+layout_mode = 0
+offset_left = 592.0
+offset_top = 112.0
+offset_right = 752.0
+offset_bottom = 184.0

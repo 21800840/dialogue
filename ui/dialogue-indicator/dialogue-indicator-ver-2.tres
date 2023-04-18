@@ -1,0 +1,25 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://cb5au6o77k8lf"]
+
+[ext_resource type="Texture2D" uid="uid://byed0a45i3wc4" path="res://ui/dialogue-indicator/dialogue-indicator-ver-2.png" id="1_ajex2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sv2ni"]
+atlas = ExtResource("1_ajex2")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0l0an"]
+atlas = ExtResource("1_ajex2")
+region = Rect2(16, 0, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sv2ni")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0l0an")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]

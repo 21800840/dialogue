@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://oskewj4s2i4k"]
+
+[ext_resource type="Script" path="res://dialogue/area/dialogue-area.gd" id="1_4irc2"]
+[ext_resource type="SpriteFrames" uid="uid://cb5au6o77k8lf" path="res://ui/dialogue-indicator/dialogue-indicator-ver-2.tres" id="2_p8w10"]
+
+[node name="DialogueArea" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_4irc2")
+dia_name = "npc"
+dia_text = "I am an NPC"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="DialogueIndicatorAnchor" type="Node2D" parent="."]
+
+[node name="DialogueIndicatorSprite" type="AnimatedSprite2D" parent="DialogueIndicatorAnchor"]
+sprite_frames = ExtResource("2_p8w10")
+autoplay = "default"
+
+[node name="InputCooldown" type="Timer" parent="."]
+wait_time = 0.1
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
+[connection signal="timeout" from="InputCooldown" to="." method="_on_input_cooldown_timeout"]

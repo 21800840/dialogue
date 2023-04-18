@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://dscmrmmgd4ojh"]
+
+[ext_resource type="PackedScene" uid="uid://ddu7ptaamudu6" path="res://player/player.tscn" id="1_oxnts"]
+[ext_resource type="PackedScene" uid="uid://dbcf0a8o4dcjo" path="res://npc/npc.tscn" id="2_677em"]
+[ext_resource type="PackedScene" uid="uid://dmintq46x10md" path="res://dialogue/dialogue-box/dialogue-box.tscn" id="3_042sf"]
+
+[node name="0" type="Node"]
+
+[node name="Player" parent="." instance=ExtResource("1_oxnts")]
+
+[node name="NPC" parent="." instance=ExtResource("2_677em")]
+position = Vector2(1008, 144)
+wanted_text = "000"
+json_file = "res://npc/npc-dialogue.json"
+
+[node name="DialogueBox" parent="." instance=ExtResource("3_042sf")]

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://1ac02oqsql3e"]
+
+[ext_resource type="Texture2D" uid="uid://qr2vhjps8l8r" path="res://ui/dialogue-indicator/dialogue-indicator.png" id="1_bjgyo"]
+
+[node name="DialogueIndicator" type="Sprite2D"]
+position = Vector2(3.8147e-06, -3.8147e-06)
+scale = Vector2(8.25, 8.25)
+texture = ExtResource("1_bjgyo")
