@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 SignalBus="*res://singletons/signalbus.gd"
+GlobalNPCVariables="*res://singletons/global-npc-variables.gd"
 
 [rendering]
 
