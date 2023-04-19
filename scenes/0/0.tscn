@@ -10,7 +10,5 @@
 
 [node name="NPC" parent="." instance=ExtResource("2_677em")]
 position = Vector2(1008, 144)
-wanted_text = "000"
-json_file = "res://npc/npc-dialogue.json"
 
 [node name="DialogueBox" parent="." instance=ExtResource("3_042sf")]

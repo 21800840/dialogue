@@ -4,11 +4,10 @@
 [ext_resource type="SpriteFrames" uid="uid://cb5au6o77k8lf" path="res://ui/dialogue-indicator/dialogue-indicator-ver-2.tres" id="2_p8w10"]
 
 [node name="DialogueArea" type="Area2D"]
+process_mode = 3
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_4irc2")
-dia_name = "npc"
-dia_text = "I am an NPC"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 

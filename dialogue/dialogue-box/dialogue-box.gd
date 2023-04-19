@@ -5,6 +5,7 @@ var current_stage = 0
 var current_stage_int_to_str = str(current_stage)
 var stage_size
 var dia_stage # DO NOT RENAME IT TO DIALOGUE_STAGE
+var original_emitter
 
 @onready var just_dialogue = $JustDialogue
 @onready var just_dialogue_name = $JustDialogue/NameLabel
@@ -46,21 +47,23 @@ func parse_json(json_file, dialogue_stage):
 	
 	# print(dia_stage)
 	
-	just_dialogue_name.text = parsed_file[dia_stage][current_stage_int_to_str]["name"]
-	just_dialogue_text.text = parsed_file[dia_stage][current_stage_int_to_str]["text"]
+	# just_dialogue_name.text = parsed_file[dia_stage][current_stage_int_to_str]["name"]
+	# just_dialogue_text.text = parsed_file[dia_stage][current_stage_int_to_str]["text"]
 	
-	if current_stage <= stage_size and Input.is_action_just_pressed("ui_select"):
+	# if current_stage <= stage_size and Input.is_action_just_pressed("ui_select"):
 		
 		
 		# Put parsed info into the text labels
-		just_dialogue_name.text = parsed_file[dia_stage][current_stage_int_to_str]["name"]
-		just_dialogue_text.text = parsed_file[dia_stage][current_stage_int_to_str]["text"]
+		# just_dialogue_name.text = parsed_file[dia_stage][current_stage_int_to_str]["name"]
+		# just_dialogue_text.text = parsed_file[dia_stage][current_stage_int_to_str]["text"]
 		
-		current_stage += 1
+		# current_stage += 1
 
 func next_dialogue():
 	if current_stage < stage_size:
 		current_stage += 1
+		
+		# print(current_stage)
 		
 		current_stage_int_to_str = str(current_stage)
 		
@@ -75,22 +78,70 @@ func next_dialogue():
 		
 		end_just_dialogue()
 		
-func start_just_dialogue():
+func start_just_dialogue(dialogue_stage):
 	# Pause tree and make visible.
-	# get_tree().paused = false
+	get_tree().paused = true
 	just_dialogue.visible = true
+	
+	dia_stage = dialogue_stage
 	
 	# Reset variables to default state
 	current_stage = 0
 	current_stage_int_to_str = str(current_stage)
+	
+	current_stage += 1
+	current_stage_int_to_str = str(current_stage)
+	
+	# print(dia_stage + " " + current_stage_int_to_str)
+	
+	just_dialogue_name.text = parsed_file[dia_stage][current_stage_int_to_str]["name"]
+	just_dialogue_text.text = parsed_file[dia_stage][current_stage_int_to_str]["text"]
 
 func end_just_dialogue():
 	just_dialogue.visible = false
 	get_tree().paused = false
+	SignalBus.emit_signal("dialogue_finished")
+
+func start_multi_option_dialogue(dialogue_stage):
+	dialogue_with_2_options.visible = true
+	get_tree().paused = true
 	
+	dia_stage = dialogue_stage
+	
+	# Reset variables to default state
+	current_stage = 0
+	current_stage_int_to_str = str(current_stage)
+	
+	current_stage += 1
+	current_stage_int_to_str = str(current_stage)
+	
+	print(dia_stage + " " + current_stage_int_to_str)
+	
+	dialogue_with_2_options_name.text = parsed_file[dia_stage][current_stage_int_to_str]["name"]
+	dialogue_with_2_options_text.text = parsed_file[dia_stage][current_stage_int_to_str]["text"]
+	dialogue_with_2_options_option_1.text = parsed_file[dia_stage][current_stage_int_to_str]["option 1"]
+	dialogue_with_2_options_option_2.text = parsed_file[dia_stage][current_stage_int_to_str]["option 2"]
+
+func end_multi_option_dialogue():
+	dialogue_with_2_options.visible = false
+	get_tree().paused = false
+	SignalBus.emit_signal("dialogue_finished")
+
 func decide_dialogue_style(json_file, dialogue_stage):
+	current_stage = 0
+	current_stage_int_to_str = str(current_stage)
 	parse_json(json_file, dialogue_stage)
 	if int(parsed_file[dia_stage][current_stage_int_to_str]["options"]) >= 1:
-		dialogue_with_2_options.visible = true
+		start_multi_option_dialogue(dialogue_stage)
 	else:
-		just_dialogue.visible = true
+		start_just_dialogue(dialogue_stage)
+		
+func leave_button():
+	end_multi_option_dialogue()
+
+func _on_option_1_pressed():
+	pass # Replace with function body.
+
+
+func _on_option_2_pressed():
+	leave_button()

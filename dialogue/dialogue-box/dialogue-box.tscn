@@ -55,6 +55,7 @@ offset_bottom = 184.0
 text = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
 
 [node name="Option1" type="Button" parent="DialogueWith2Options"]
+process_mode = 3
 layout_mode = 0
 offset_left = 592.0
 offset_top = 16.0
@@ -67,3 +68,6 @@ offset_left = 592.0
 offset_top = 112.0
 offset_right = 752.0
 offset_bottom = 184.0
+
+[connection signal="pressed" from="DialogueWith2Options/Option1" to="." method="_on_option_1_pressed"]
+[connection signal="pressed" from="DialogueWith2Options/Option2" to="." method="_on_option_2_pressed"]
