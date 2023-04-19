@@ -4,9 +4,10 @@
 	},
 	"No Quests": {
 		"1" : {"name":"npc", "text":"I don't have any quests for you right now.", "options":"0"},
-		"2" : {"name":"Player", "text":"Oh, ok.", "options":"0"}
+		"2" : {"name":"Player", "text":"Oh, ok.", "options":"0"},
+		"3" : {"name":"npc", "text":"Goodbye.", "options":"0"}
 	},
 	"Options": {
-		"1" : {"name":"npc", "text":"I have a few options for you...", "options":"1"}
+		"1" : {"name":"npc", "text":"I have a few options for you...", "options":"2", "option 1":"Tell me more...", "option 2":"Leave"}
 	}
 }
